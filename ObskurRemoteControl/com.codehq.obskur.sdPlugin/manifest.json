@@ -1,0 +1,50 @@
+{
+  "Actions": [
+    {
+      "Icon": "plugin/images/trigger", 
+      "Name": "Trigger Event", 
+      "States": [
+        {
+          "Image": "plugin/images/trigger"
+        }
+      ], 
+      "Tooltip": "Triggers an event that you specify in the Property Inspector.", 
+      "UUID": "com.codehq.obskur.trigger"
+    },
+    {
+      "Icon": "plugin/images/stateful", 
+      "Name": "Control Stateful Property", 
+      "States": [
+        {
+          "Image": "plugin/images/stateful"
+        }
+      ], 
+      "Tooltip": "Checks and controls the state of a field in Variable.", 
+      "UUID": "com.codehq.obskur.stateful"
+    }
+  ], 
+  "SDKVersion": 2,
+  "Author": "Bade Habib", 
+  "CodePath": "plugin/index.html", 
+  "Description": "Perform remote control calls to Obskur Remote Control API.", 
+  "Name": "Obskur Remote Control", 
+  "Category": "Obskur Remote Control",
+  "CategoryIcon": "pluginIcon",
+  "PropertyInspectorPath": "pi/index.html",
+  "Icon": "pluginIcon", 
+  "Version": "1.6.16",
+  "OS": [
+    {
+        "Platform": "mac", 
+        "MinimumVersion" : "10.11"
+    },
+    {
+        "Platform": "windows", 
+        "MinimumVersion" : "10"
+    }
+  ],
+  "Software": 
+    {
+        "MinimumVersion" : "4.1"
+    }
+}

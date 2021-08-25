@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>com.codehq.obskur.pi</title>
+        <meta charset="UTF-8">
+    </head>
+    <!-- Import style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/selectize.bootstrap2.css">
+    <link rel="stylesheet" type="text/css" href="css/sdpi.css">
+     <!-- Import scripts -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+     <script src="../plugin/js/utils.js"></script>
+     <script src="js/tooltips.js"></script>
+     <script src="js/pi.js"></script>
+     <script src="js/triggerPI.js"></script>
+     <script src="js/statefulPI.js"></script>
+     <script src="js/main.js"></script>
+    <body>
+        <!-- Property Inspector -->
+        <div class="sdpi-wrapper" id="pi">
+            
+            <div class="sdpi-item" id="obskur-item">
+                <div class="sdpi-item-label" id="obskur-label">URL</div>
+                <input class="sdpi-item-value" type="text">
+            </div>
+            <!---->
+            <!--
+            <div class="sdpi-item" id="obskur-item" style="display: none;">
+                <div class="sdpi-item-label" id="obskur-label">URL</div>
+                <input class="sdpi-item-value">
+            </div>
+            -->
+
+            <!-- Select dropdown -->
+            <!--<div class="sdpi-item" id="obskur-item" style="display: none;">-->
+            <div class="sdpi-item" id="obskur-item">
+                <div class="sdpi-item-label" id="obskur-label">Events</div>
+                <select class="sdpi-item-value select" id="obskur-select" placeholder="Select an option...">
+                    <option id="no-options" value="no-options"></option>
+                </select>
+            </div>
+            
+            <!-- Message for loading obskur -->
+            <details id="obskur-load" class="message info">
+                <summary>Finding Obskur...</summary>
+            </details>
+            <!-- Alert for not finding Obskur -->
+            <details id="obskur-alert" class="message caution" style="display: none;">
+                <summary>Alert</summary>
+            </details>
+
+            <!-- Template for properties -->
+            <div class="sdpi-item" id="property-template" style="display: none;">
+                <div class="sdpi-item-label"></div>
+                <input class="sdpi-item-value">
+            </div>
+            <!-- Placeholder for more UI elements -->
+            <div id="placeholder"></div>
+        </div>        
+        <!-- Floating tooltips element -->
+        <div class="sdpi-info-label hidden" style="top: -1000px;" value=""></div>
+    </body>
+</html>

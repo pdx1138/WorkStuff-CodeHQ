@@ -19,19 +19,30 @@
     <body>
         <!-- Property Inspector -->
         <div class="sdpi-wrapper" id="pi">
-            
+            <!--          
             <div class="sdpi-item" id="property-template" name="url" type="textarea">
                 <div class="sdpi-item-label" id="obskur-label" name="url" class="sdpi-item-value routeProp">URL</div>
                 <input class="sdpi-item-value" name="url" type="text">
             </div>
-            <!---->
-            <!--
-            <div class="sdpi-item" id="obskur-item" style="display: none;">
-                <div class="sdpi-item-label" id="obskur-label">URL</div>
-                <input class="sdpi-item-value">
+            
+            <div type="text" class="sdpi-item" id="url-only" style="display: none;">
+            -->  
+            <!--          
+            <div type="text" class="sdpi-item" id="url-only">
+                <div class="sdpi-item-label">URL</div>
+                <input class="sdpi-item-value" type="text" id="url">
             </div>
             -->
+            
+            <div type="text" class="sdpi-item" id="url-only">
+                <div class="sdpi-item-label">Url</div>
+                <input class="sdpi-item-value" id="url" type="text">
+                <!-- <span class="sdpi-item-value text">
+                       <textarea type="text" id="url"></textarea>
 
+                </span>-->
+            </div>
+            
             <!-- Select dropdown -->
             <!--<div class="sdpi-item" id="obskur-item" style="display: none;">-->
             <div class="sdpi-item" id="obskur-item">
@@ -50,13 +61,13 @@
                 <summary>Alert</summary>
             </details>
 
-            <!-- Template for properties -->
+            <!-- Template for properties--> 
             <div class="sdpi-item" id="property-template" style="display: none;">
                 <div class="sdpi-item-label"></div>
                 <input class="sdpi-item-value">
             </div>
-            <!-- Placeholder for more UI elements -->
-            <div id="placeholder"></div>
+            <!-- Placeholder for more UI elements-->
+            <div id="placeholder"></div> 
         </div>        
         <!-- Floating tooltips element -->
         <div class="sdpi-info-label hidden" style="top: -1000px;" value=""></div>

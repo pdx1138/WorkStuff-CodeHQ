@@ -32,7 +32,7 @@
   "CategoryIcon": "pluginIcon",
   "PropertyInspectorPath": "pi/index.html",
   "Icon": "pluginIcon", 
-  "Version": "1.6.19",
+  "Version": "1.6.58",
   "OS": [
     {
         "Platform": "mac", 

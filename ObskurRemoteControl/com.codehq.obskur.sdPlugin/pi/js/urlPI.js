@@ -1,134 +1,26 @@
 //==============================================================================
 /**
-@file       triggerPI.js
+@file       UrlPI.js
 @brief      Obskur Remote Control Plugin
 @copyright  This source code is licensed under the MIT-style 
             license found in the LICENSE file.
 **/
 //==============================================================================
 
-function TriggerPI(inContext, inLanguage, inStreamDeckVersion, inPluginVersion) {
+function UrlPI(inContext, inLanguage, inStreamDeckVersion, inPluginVersion) {
   // Init ScenePI
   var instance = this;
 
   // Inherit from PI
   PI.call(this, inContext, inLanguage, inStreamDeckVersion, inPluginVersion);
 
-  // URL??
-  this.loadUrl = function() {
-    //alert('URL Loading'); -> VERIFIED THIS HITS ON 8/26/2021
-
-    var urlEl = document.getElementById('url-only');
-
-    // Ensure 1 URL
-    //whle (urlEl.length > 1) {
-    //  urlEl[1].parentNode.removeChild(urlEl[1]);
-    //}
-
-    if (urlEl !== undefined) {
-    //  urlEl[1].parentNode.removeChild(urlEl[1]);
-      alert('URL Element Exists In Page!');
-    }
-
-    //while (urlEl.length > 0) {
-    //  urlEl[0].parentNode.removeChild(urlEl[0]);
-    //}
-
-    alert('Route Alert 1:' + urlRoutes);
-
-    
-    if(!(settings.url)) {
-      alert('Making URL property in settings.');
-      settings.url = '';      
-    }
-   
-    /*
-    if(!(settings.route['url'])) {
-      alert('Making URL property in settings.');
-      settings.route['url'] = '';      
-    }
-     */
-    urlRoutes = settings.url;
-
-    alert('Route Alert 2:' + urlRoutes);
-
-    /*
-    if(!('url' in settings)) {
-      settings.url = '';      
-    }
-    else {
-      urlRoutes = settings.url;
-    }
-    */
-
-    var url = document.getElementById('url');
-    url.addEventListener('change', urlPropertyChanged);
-
-    alert('Event Set!!');
-
-    //urlRoutes = settings.url;
-    //var url = document.getElementsByClassName('url')
-    //url.addEventListener('change', urlPropertyChanged);
-
-    //if (urlRoutes.length != 0)
-    //if(urlRoutes != '')
-    /*if(urlRoutes !=)
-    {
-      alert('URL detected :');// + urlRoutes );
-
-      var url = urlEl.getElementsByClassName('sdpi-item-value');
-      //url.setAttribute('value', urlRoutes);
-      url.value = urlRoutes;
-      
-      //url.insertAdjacentHTML('afterend', urlRoutes);
-      //url.addEventListener('change', urlPropertyChanged);
-      //instance.saveSettings();
-      
-      //var inputField = urlEl.getElementsByClassName('url');
-      //input.setAttribute('value', urlRoutes);
-
-      //url.insertAdjacentHTML('afterend', urlRoutes);
-      //document.getElementById("pi").append(url);
-    }*/
-     /*  else{
-      alert('No URL Found');
-
-      // Make a URL field?
-    
-      var url = document.createElement('url-only');
-      var label = document.createTextNode('URL');
-      var input = document.createElement('input');
-
-      url.setAttribute('value', '');
-      url.setAttribute('class', 'sdpi-item');
-      url.setAttribute('type', 'text');
-
-      label.setAttribute('class', 'sdpi-item-label');
-
-      input.setAttribute('class', 'sdpi-item-value');
-      input.setAttribute('id', 'url');
-      input.setAttribute('type', 'text');
-
-      url.appendChild(label);
-      url.appendChild(input);
-
-      url.addEventListener('change', urlPropertyChanged);
-
-      // Append to DOM
-      //document.getElementById("pi").append(url);
-      urlEl.insertAdjacentHTML.getElementsByClassName('sdpi-item-value').insertAdjacentHTML('afterend', url);
-      
-    }*/
-
-  }
-
   // Loads all routes
   this.loadRoutes = function() {
 
-    var routesEl = document.getElementsByClassName('route');
+    var urlEl = document.getElementsByClassName('url');
 
-    while(routesEl.length > 0) {
-      routesEl[0].parentNode.removeChild(routesEl[0]);
+    while(urlEl.length > 0) {
+      urlEl[0].parentNode.removeChild(urlEl[0]);
     }
 
     if (Object.keys(triggerRoutes).length > 1) {
@@ -219,8 +111,6 @@ function TriggerPI(inContext, inLanguage, inStreamDeckVersion, inPluginVersion) 
     if('updatedProps' in settings.route) {
       propValues = settings.route['updatedProps'];
     }
-
-    propValues.appendChild()
 
     // Add entries for each property
     route.routeProps.forEach(prop => {
@@ -347,50 +237,5 @@ function TriggerPI(inContext, inLanguage, inStreamDeckVersion, inPluginVersion) 
     // Inform the plugin that a trigger is set
     instance.sendToPlugin({ 'piEvent': 'setSettings', 
     'settings' : settings});
-  }
-
-  // Property changed
-  function urlPropertyChanged(inEvent) {
-    //alert('This is happening!');
-
-    //var propName = 'url';
-    var propValue = inEvent.target.value;
-
-    alert('This is happening! ' + propValue);
-
-    //settings.url = propValue;
-    //settings.route['url'] = propValue;
-
-    instance.saveSettings();
-
-    instance.sendToPlugin({'piEvent' : 'setSettings',
-    'settings' : settings});
-
-    /*
-    var propName = inEvent.target.name;
-    alert(propName)
-    var propValue;
-    
-    if(inEvent.target.type == "text" 
-      || inEvent.target.type == "number") {
-      propValue = inEvent.target.value;
-    }
-    else if(inEvent.target.type == "checkbox") {
-      propValue = inEvent.target.checked;
-    }
-    
-    // If updated properties does not exist, add it
-    if(!(settings.route['updatedProps'])) {
-      settings.route['updatedProps'] = {};
-    }
-
-    // Update property and save settings
-    settings.route.updatedProps[propName] = propValue;
-    instance.saveSettings();
-
-    // Inform the plugin that a trigger is set
-    instance.sendToPlugin({ 'piEvent': 'setSettings', 
-    'settings' : settings});
-    */
   }
 }

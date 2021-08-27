@@ -16,6 +16,10 @@ var globalSettings = {};
 // Global settings
 var settings = {};
 
+// All url routes
+//var urlRoutes = 'www.url.com';
+var urlRoutes = '';
+
 // All trigger routes
 var triggerRoutes = {};
 
@@ -55,6 +59,8 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
 
     // Create actions
     var pi;
+
+    // Add URL Action
     
     if (action === 'com.codehq.obskur.trigger') {
         pi = new TriggerPI(inUUID, language, streamDeckVersion, pluginVersion);
@@ -86,6 +92,7 @@ function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, 
                 // Save trigger routes
                 triggerRoutes = jsonPayload;
                 pi.loadRoutes();
+                pi.loadUrl();
             }
             else if(action === 'com.codehq.obskur.stateful') {
                 // Save state actions
